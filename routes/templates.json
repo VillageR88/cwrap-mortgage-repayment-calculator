@@ -1,0 +1,55 @@
+[
+  {
+    "element": "section",
+    "name": "section",
+    "style": "margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px;",
+    "attributes": {
+      "style": ""
+    },
+    "children": [
+      {
+        "element": "h2",
+        "style": "color: white;",
+        "attributes": {
+          "class": "title1"
+        },
+        "text": "Results shown here"
+      },
+      {
+        "element": "p",
+        "style": "color: var(--colorSlate300); margin: 0; padding: 0;",
+        "attributes": {
+          "class": "text1"
+        },
+        "text": "Complete the form and click “calculate repayments” to see what your monthly repayments would be."
+      }
+    ]
+  },
+  {
+    "element": "section",
+    "name": "section2",
+    "style": "margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px;",
+    "attributes": {
+      "style": ""
+    },
+    "children": [
+      {
+        "element": "h3",
+        "style": "margin: 0; padding: 0; color: var(--colorSlate300);",
+        "attributes": {
+          "class": "text1",
+          "style": ""
+        },
+        "text": "Your monthly repayments"
+      },
+      {
+        "element": "p",
+        "style": "margin: 0; padding: 0; color: var(--colorLime); font-size: 56px; font-weight: 700;",
+        "attributes": {
+          "style": ""
+        },
+        "text": "£1,797.74"
+      }
+    ]
+  }
+]

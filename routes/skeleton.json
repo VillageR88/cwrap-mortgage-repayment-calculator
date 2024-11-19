@@ -1,0 +1,529 @@
+{
+  "head": {
+    "title": "New Candy Wrapper project",
+    "link": [
+      {
+        "rel": "shortcut icon",
+        "href": "favicon.ico",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap",
+        "type": "text/css"
+      }
+    ],
+    "meta": [
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1.0"
+      },
+      {
+        "charset": "UTF-8"
+      },
+      {
+        "name": "description",
+        "content": "New Candy Wrapper project."
+      },
+      {
+        "name": "keywords",
+        "content": ""
+      }
+    ]
+  },
+  "fonts": [],
+  "root": {
+    "--colorSlate100": "#E4F4FD",
+    "--colorSlate900": "#133041",
+    "--colorSlate300": "#9ABED5",
+    "--colorSlate700": "#4E6E7E",
+    "--colorSlate500": "#6B94A8",
+    "--colorLime": "#D8DB2F",
+    "--colorError": "#D73328"
+  },
+  "classroom": [
+    {
+      "name": "title1",
+      "type": "class",
+      "style": "font-size: 24px; font-weight: 700; margin: 0; padding: 0;"
+    },
+    {
+      "name": "text1",
+      "type": "class",
+      "style": "font-size: 16px; font-weight: 500; line-height: 150%;"
+    },
+    {
+      "name": "text2",
+      "type": "class",
+      "style": "font-weight: 700; font-size: 18px; color: var(--colorSlate900);"
+    },
+    {
+      "name": "textError",
+      "type": "class",
+      "style": "font-size: 14px;"
+    }
+  ],
+  "element": "body",
+  "style": "background-color: var(--colorSlate100); display: flex; align-items: center; justify-content: center; margin: 0; padding: 24px; min-height: 100dvh; box-sizing: border-box; font-family: Plus Jakarta Sans;",
+  "mediaQueries": [
+    {
+      "query": "max-width: 640px",
+      "style": "padding: 0; margin: 0;"
+    }
+  ],
+  "children": [
+    {
+      "element": "main",
+      "style": "width: 1008px; height: fit-content; background-color: white; border-radius: 24px; display: flex; min-height: 606px;",
+      "mediaQueries": [
+        {
+          "query": "max-width: 768px",
+          "style": "flex-direction: column; width: 688px; border-radius: 24px;"
+        },
+        {
+          "query": "max-width: 640px",
+          "style": "width: 100%; padding: 0; margin: 0; border-radius: 0;"
+        }
+      ],
+      "children": [
+        {
+          "element": "div",
+          "style": "width: 50%;",
+          "mediaQueries": [
+            {
+              "query": "max-width: 768px",
+              "style": "width: 100%;"
+            },
+            {
+              "query": "max-width: 640px",
+              "style": "border-radius: 0;"
+            }
+          ],
+          "children": [
+            {
+              "element": "div",
+              "style": "padding: 40px; box-sizing: border-box; height: 100%; display: flex; flex-direction: column; gap: 40px;",
+              "mediaQueries": [
+                {
+                  "query": "max-width: 640px",
+                  "style": "padding: 32px 24px 32px 24px;"
+                }
+              ],
+              "children": [
+                {
+                  "element": "div",
+                  "style": "display: flex; justify-content: space-between;",
+                  "mediaQueries": [
+                    {
+                      "query": "max-width: 640px",
+                      "style": "flex-direction: column; align-items: baseline; gap: 8px;"
+                    }
+                  ],
+                  "children": [
+                    {
+                      "element": "h1",
+                      "attributes": {
+                        "class": "title1"
+                      },
+                      "style": "color: var(--colorSlate900);",
+                      "text": "Mortgage Calculator"
+                    },
+                    {
+                      "element": "button",
+                      "attributes": {
+                        "class": "text1",
+                        "id": "clearAllButton"
+                      },
+                      "style": "background-color: transparent; border: none; margin: 0; padding: 0; color: var(--colorSlate700); text-decoration: underline; text-underline-offset: 3px; font-family: Plus Jakarta Sans; cursor: pointer;",
+                      "text": "Clear All"
+                    }
+                  ]
+                },
+                {
+                  "element": "div",
+                  "style": "display: flex; flex-direction: column; gap: 24px;",
+                  "children": [
+                    {
+                      "element": "ul",
+                      "style": "margin: 0; padding: 0; display: grid; gap: 24px; grid-template-areas: \"li0 li0\" \"li1 li2\";",
+                      "mediaQueries": [
+                        {
+                          "query": "max-width: 640px",
+                          "style": "grid-template-areas: \"li0\" \"li1\" \"li2\";"
+                        }
+                      ],
+                      "children": [],
+                      "blueprint": {
+                        "element": "li",
+                        "count": "3",
+                        "children": [
+                          {
+                            "element": "label",
+                            "text": "cwrapArray[Mortgage Amount,Mortgage Term,Interest Rate]",
+                            "style": "color: var(--colorSlate700)",
+                            "extend": [
+                              {
+                                "extension": "::before",
+                                "style": "content: \"cwrapArray[£,years,%]\"; position: absolute; top: 45px; font-size: 18px; font-weight: 700; left: cwrapArray[16px,,]; right: cwrapArray[,16px,16px];"
+                              },
+                              {
+                                "extension": ".errorField::before",
+                                "style": "color: white;"
+                              }
+                            ],
+                            "attributes": {
+                              "for": "cwrapArray[mortgageAmountInput,mortgageTermInput,interestRateInput]",
+                              "id": "cwrapArray[mortgageAmountLabel,mortgageTermLabel,interestRateLabel]"
+                            }
+                          },
+                          {
+                            "element": "input",
+                            "style": "height: 48px;width: 100%;border-radius: 4px;border: 1px solid var(--colorSlate500);background-image: linear-gradient(cwrapArray[90deg,270deg,270deg], var(--colorSlate100) cwrapArray[44px,80px,51px], transparent 40px);outline: none;padding-inline: cwrapArray[60px 16px, 16px 96px, 16px 67px];box-sizing: border-box",
+                            "extend": [
+                              {
+                                "extension": ":hover",
+                                "style": "border-color: var(--colorSlate900); ;"
+                              },
+                              {
+                                "extension": ":focus",
+                                "style": "border-color: var(--colorLime); background-image: linear-gradient(cwrapArray[90deg,270deg,270deg], var(--colorLime) cwrapArray[44px,80px,51px], transparent 40px); ;"
+                              },
+                              {
+                                "extension": ".errorField",
+                                "style": "background-image: linear-gradient(cwrapArray[90deg,270deg,270deg], var(--colorError) cwrapArray[44px,80px,51px], transparent 40px); border-color: var(--colorError);"
+                              }
+                            ],
+                            "attributes": {
+                              "class": "text2",
+                              "type": "number",
+                              "id": "cwrapArray[mortgageAmountInput,mortgageTermInput,interestRateInput]"
+                            }
+                          },
+                          {
+                            "element": "p",
+                            "text": "This field is required",
+                            "style": "margin: 0;padding: 0;display: none;color: var(--colorError)",
+                            "attributes": {
+                              "class": "textError",
+                              "id": "cwrapArray[mortgageAmountError,mortgageTermError,interestRateError]"
+                            }
+                          }
+                        ],
+                        "style": "list-style: none;display: flex;flex-direction: column;gap: 12px;grid-area: licwrapIndex;position: relative",
+                        "text": ""
+                      }
+                    },
+                    {
+                      "element": "div",
+                      "style": "display: flex; flex-direction: column; gap: 12px;",
+                      "children": [
+                        {
+                          "element": "h2",
+                          "attributes": {
+                            "class": "text1"
+                          },
+                          "style": "color: var(--colorSlate700); margin: 0; padding: 0;",
+                          "text": "Mortgage Type"
+                        },
+                        {
+                          "element": "ul",
+                          "attributes": {
+                            "id": "bottomUl"
+                          },
+                          "style": "margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px;",
+                          "children": [],
+                          "blueprint": {
+                            "element": "li",
+                            "count": "2",
+                            "children": [
+                              {
+                                "element": "label",
+                                "style": "display: flex;width: 100%;height: 48px;border: 1px solid var(--colorSlate500);border-radius: 4px;cursor: pointer;align-items: center",
+                                "children": [
+                                  {
+                                    "element": "input",
+                                    "attributes": {
+                                      "type": "radio",
+                                      "name": "mortgageType",
+                                      "id": "cwrapArray[mortgageTypeRepayment,mortgageTypeInterestOnly]",
+                                      "value": "cwrapArray[repayment,interestOnly]",
+                                      "tabindex": "0"
+                                    },
+                                    "style": "opacity: 0"
+                                  }
+                                ],
+                                "text": "cwrapArray[Repayment,Interest Only]",
+                                "attributes": {
+                                  "class": "text2",
+                                  "for": "cwrapArray[mortgageTypeRepayment,mortgageTypeInterestOnly]"
+                                },
+                                "extend": [
+                                  {
+                                    "extension": "::before",
+                                    "style": "content: \"\"; display: flex; width: 16px; height: 16px; outline: 1px solid var(--colorSlate700); border-radius: 50%; margin-inline: 16px;"
+                                  },
+                                  {
+                                    "extension": ":hover",
+                                    "style": "border-color: var(--colorLime);"
+                                  },
+                                  {
+                                    "extension": ":has(input:nth-of-type(1):checked)",
+                                    "style": "border-color: var(--colorLime); background-color: rgba(216,219,47,0.15);"
+                                  },
+                                  {
+                                    "extension": ":has(input:checked)::before",
+                                    "style": "background-color: var(--colorLime); outline-color: white; outline-width: 3.5px; outline-offset: -5.5px; width: 20px; height: 20px; margin-inline: 14px;"
+                                  },
+                                  {
+                                    "extension": ":has(input:nth-of-type(1):focus-within)",
+                                    "style": "border-color: var(--colorLime);"
+                                  }
+                                ]
+                              }
+                            ],
+                            "style": "list-style: none"
+                          }
+                        },
+                        {
+                          "element": "p",
+                          "attributes": {
+                            "class": "textError",
+                            "id": "mortgageTypeError"
+                          },
+                          "style": "margin: 0; padding: 0; color: var(--colorError); display: none;",
+                          "text": "This field is required"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "element": "button",
+                  "attributes": {
+                    "id": "submitButton"
+                  },
+                  "style": "width: 100%; height: 56px; border-radius: 999px; border: none; background-color: var(--colorLime); transition: 150ms; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0; padding: 0; max-width: 314px;",
+                  "extend": [
+                    {
+                      "extension": ":hover",
+                      "style": "background-color: rgba(216,219,47,0.5);"
+                    }
+                  ],
+                  "mediaQueries": [
+                    {
+                      "query": "max-width: 640px",
+                      "style": "width: 100%; max-width: 100%;"
+                    }
+                  ],
+                  "children": [
+                    {
+                      "element": "img",
+                      "attributes": {
+                        "src": "static/images/icon-calculator.svg",
+                        "alt": "calculator icon"
+                      },
+                      "style": ""
+                    },
+                    {
+                      "element": "span",
+                      "attributes": {
+                        "class": "text2"
+                      },
+                      "style": "margin-top: 2px;",
+                      "text": "Calculate Repayments"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "element": "div",
+          "style": "width: 50%; background-color: var(--colorSlate900); border-radius: 0 24px 24px 80px; display: flex; align-items: center; justify-content: center; padding: 40px; box-sizing: border-box;",
+          "mediaQueries": [
+            {
+              "query": "max-width: 768px",
+              "style": "width: 100%; border-radius: 0 0 24px 24px;"
+            },
+            {
+              "query": "max-width: 640px",
+              "style": "border-radius: 0; padding: 32px 24px 32px 24px;"
+            }
+          ],
+          "children": [
+            {
+              "element": "div",
+              "attributes": {
+                "id": "resultsEmpty"
+              },
+              "style": "display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 16px;",
+              "children": [
+                {
+                  "element": "img",
+                  "attributes": {
+                    "src": "static/images/illustration-empty.svg",
+                    "alt": "illustration"
+                  },
+                  "style": "height: fit-content; width: fit-content;"
+                },
+                {
+                  "element": "section",
+                  "style": "margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px;",
+                  "children": [
+                    {
+                      "element": "h2",
+                      "attributes": {
+                        "class": "title1"
+                      },
+                      "style": "color: white;",
+                      "text": "Results shown here"
+                    },
+                    {
+                      "element": "p",
+                      "attributes": {
+                        "class": "text1"
+                      },
+                      "style": "color: var(--colorSlate300); margin: 0; padding: 0;",
+                      "text": "Complete the form and click “calculate repayments” to see what your monthly repayments would be."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "element": "div",
+              "attributes": {
+                "id": "resultsSuccess"
+              },
+              "style": "height: 100%; width: 100%; display: none; flex-direction: column; gap: 40px;",
+              "children": [
+                {
+                  "element": "section",
+                  "style": "display: flex; flex-direction: column; gap: 16px;",
+                  "children": [
+                    {
+                      "element": "h2",
+                      "attributes": {
+                        "class": "title1"
+                      },
+                      "style": "color: white;",
+                      "text": "Your results"
+                    },
+                    {
+                      "element": "p",
+                      "attributes": {
+                        "class": "text1"
+                      },
+                      "style": "color: var(--colorSlate300); margin: 0; padding: 0;",
+                      "text": "Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again."
+                    }
+                  ]
+                },
+                {
+                  "element": "div",
+                  "style": "width: 100%; background-color: rgba(0,0,0,0.25); height: 293px; border-radius: 8px; border-top: 4px solid var(--colorLime);",
+                  "mediaQueries": [
+                    {
+                      "query": "max-width: 768px",
+                      "style": "width: 100%;"
+                    },
+                    {
+                      "query": "max-width: 640px",
+                      "style": "height: fit-content;"
+                    }
+                  ],
+                  "children": [
+                    {
+                      "element": "div",
+                      "style": "padding: 32px; box-sizing: border-box; width: 100%; height: 100%; display: flex; flex-direction: column; gap: 32px; max-width: 424px;",
+                      "mediaQueries": [
+                        {
+                          "query": "max-width: 768px",
+                          "style": "width: 100%; max-width: 100%;"
+                        },
+                        {
+                          "query": "max-width: 640px",
+                          "style": "height: fit-content;"
+                        }
+                      ],
+                      "children": [
+                        {
+                          "element": "section",
+                          "style": "margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px;",
+                          "children": [
+                            {
+                              "element": "h3",
+                              "attributes": {
+                                "class": "text1"
+                              },
+                              "style": "margin: 0; padding: 0; color: var(--colorSlate300);",
+                              "text": "Your monthly repayments"
+                            },
+                            {
+                              "element": "p",
+                              "attributes": {
+                                "id": "resultsMonthly"
+                              },
+                              "style": "margin: 0; padding: 0; color: var(--colorLime); font-size: 56px; font-weight: 700; overflow: hidden; text-overflow: ellipsis;",
+                              "mediaQueries": [
+                                {
+                                  "query": "max-width: 640px",
+                                  "style": "font-size: 40px;"
+                                }
+                              ],
+                              "text": "£0.08"
+                            }
+                          ]
+                        },
+                        {
+                          "element": "div",
+                          "style": "width: 100%; border-bottom: 1px solid rgba(154,190,213,0.25);",
+                          "mediaQueries": [
+                            {
+                              "query": "max-width: 768px",
+                              "style": "width: 100%;"
+                            }
+                          ]
+                        },
+                        {
+                          "element": "section",
+                          "style": "display: flex; flex-direction: column; gap: 8px;",
+                          "children": [
+                            {
+                              "element": "h3",
+                              "attributes": {
+                                "class": "text1"
+                              },
+                              "style": "margin: 0; padding: 0; color: var(--colorSlate300);",
+                              "text": "Total you'll repay over the term"
+                            },
+                            {
+                              "element": "p",
+                              "attributes": {
+                                "id": "resultsTotal"
+                              },
+                              "style": "margin: 0; padding: 0; color: white; font-size: 24px; font-weight: 700; overflow: hidden; text-overflow: ellipsis;",
+                              "text": "£1.01"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "element": "script",
+      "attributes": {
+        "src": "static/scripts/main.js"
+      },
+      "style": ""
+    }
+  ]
+}
